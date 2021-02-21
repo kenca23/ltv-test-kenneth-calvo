@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <!-- Main CSS -->
     <link rel="stylesheet" href="./css/main.css">
 
@@ -17,7 +20,145 @@
 
 </head>
 <body>
-    <h1>LTV FrontEnd Developer | Kenneth Calvo</h1>
+
+    <header>
+        <nav class="navbar navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="./">
+                    <img src="./assets/SVGs/Logo.svg" class="logo-icon" alt="Company Logo"></a>
+                <div class="" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><img src="./assets/SVGs/icn_search.svg" alt="Search icon" class="nav-link-icon"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img src="./assets/SVGs/icn_person.svg" alt="Profile icon" class="nav-link-icon"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="search-component">
+        <div class="container">
+            <h1>Search Any Email Address</h1>
+            <p class="title-p"><span class="highlight">Start Here</span> - Look up the owner's name, photos and online
+                profiles.</br>See what you find!</p>
+            <form action="results.html" method="GET" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <input 
+                    class="form-control form-control-lg search-input" 
+                    name="search" 
+                    type="email"
+                    data-id="email"
+                    placeholder="EMAIL"
+                    required>
+                    <div class="invalid-feedback">
+                        Please add a valid email address
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block primary-button" onclick="getData()">GO!</button>
+            </form>
+            <div class="main-disclaimer">
+                <img class="icon" src="./assets/SVGs/lock.svg" alt="lock icon">
+                <p class="disclaimer">Enter Any Email Address. They won't be notified.</p>
+            </div>
+        </div>
+        
+
+    </main>
+
+    <section class="explanation-component gray-gradient">
+        <div class="container">
+            <h2>Reverse Email Lookup</h2>
+            <p class="explanation-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="row steps-list">
+                <div class="col-md-6">
+                    <div class="step step-1">
+                        <div class="step-number">
+                            <span class="number circle">1</span>
+                        </div>
+                        <div class="step-main">
+                            <h3>Lorem Ipsum</h3>
+                            <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="step step-2">
+                        <div class="step-number">
+                            <span class="number circle">2</span>
+                        </div>
+                        <div class="step-main">
+                            <h3>Lorem Ipsum</h3>
+                            <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="step step-3">
+                        <div class="step-number">
+                            <span class="number circle">3</span>
+                        </div>
+                        <div class="step-main">
+                            <h3>Lorem Ipsum</h3>
+                            <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="step step-4">
+                        <div class="step-number">
+                            <span class="number circle">4</span>
+                        </div>
+                        <div class="step-main">
+                            <h3>Lorem Ipsum</h3>
+                            <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="step step-5">
+                        <div class="step-number">
+                            <span class="number circle">5</span>
+                        </div>
+                        <div class="step-main">
+                            <h3>Lorem Ipsum</h3>
+                            <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                        </div>
+                    </div>
+                    <div class="step step-6">
+                        <div class="step-number">
+                            <span class="number circle">6</span>
+                        </div>
+                        <div class="step-main">
+                            <h3>Lorem Ipsum</h3>
+                            <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+    </section>
+
+    <footer>
+        <div class="container footer">
+            <div class="footer-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Terms | Privacy</a>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -26,6 +167,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
+
+<script>
+    // Writing JS code here because is a small validation and save to localStorage. A separate file is not needed because of the size of the JS
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            let forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            let validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+
+    function getData() {
+        //gettting the values
+        let email = document.querySelector("[data-id=email]").value;
+        //saving the values in local storage
+        localStorage.setItem("email", email);
+    }
+</script>
 
 </body>
 </html>
