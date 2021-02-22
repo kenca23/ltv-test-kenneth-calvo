@@ -1,3 +1,4 @@
+// getting all the elements that I will use, I used data-id as a custom attribute to differentiate them to the styles classes or ids.
 const spinner = document.querySelector("[data-id=spinner]");
 const result = document.querySelector("[data-id=result]");
 const resultTitle = document.querySelector("[data-id=result-title]");
@@ -16,6 +17,7 @@ const url = "https://ltv-data-api.herokuapp.com/api/v1/records.json?email="
 let email = localStorage.getItem("email");
 
 const cleanData = () => { 
+    // Clear values from the result component
     resultTitle.innerHTML = ""
     resultText.innerHTML = ""
     dataName.innerHTML = ""
@@ -27,12 +29,14 @@ const cleanData = () => {
 }
 
 const printData = (data) => { 
+    //Adding and removing classes to remove the spinner and show results
     spinner.classList.add("d-none");
     spinner.classList.remove("d-flex");
     cleanData()
     result.classList.add("d-flex");
     result.classList.remove("d-none");
     if (data && Object.keys(data).length > 0) {
+        //Adding class result-data when we found data in the API
         result.classList.add("result-data")
         searchComponent.classList.add("result-data")
         resultTitle.innerText = "1 Result"
@@ -68,10 +72,12 @@ const printData = (data) => {
 }
 
 const getData = async () => { 
+    //Adding and removing classes to remove results and show the spinner
     spinner.classList.add("d-flex");
     spinner.classList.remove("d-none");
     result.classList.add("d-none");
     result.classList.remove("d-flex");
+    //fetching data from the API
     let response = await fetch(url + email, {
         method: 'GET',
         headers: {
@@ -92,7 +98,8 @@ window.onload = () => {
     }
 }
 
-( () => {
+(() => {
+    //Validation for the input and to send data to the API request
     'use strict';
     window.addEventListener('load', function () {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -107,7 +114,7 @@ window.onload = () => {
                     event.preventDefault();
                     event.stopPropagation();
                     email = document.querySelector("[data-id=email]").value;
-                    localStorage.setItem("email", email);
+                    localStorage.setItem("email", email); // save the email in local storage in case the user refresh the page
                     getData()
                 }
                 form.classList.add('was-validated');
