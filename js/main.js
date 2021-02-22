@@ -2,6 +2,7 @@ const spinner = document.querySelector("[data-id=spinner]");
 const result = document.querySelector("[data-id=result]");
 const resultTitle = document.querySelector("[data-id=result-title]");
 const resultText = document.querySelector("[data-id=result-text]");
+const searchComponent = document.querySelector("[data-id=search-component]");
 
 const dataName = document.querySelector("[data-id=data-name]");
 const dataDescription = document.querySelector("[data-id=data-description]");
@@ -33,6 +34,7 @@ const printData = (data) => {
     result.classList.remove("d-none");
     if (data && Object.keys(data).length > 0) {
         result.classList.add("result-data")
+        searchComponent.classList.add("result-data")
         resultTitle.innerText = "1 Result"
         resultText.innerText = "Look at the result below to see the details of the person you’re searched for."
 
@@ -56,6 +58,7 @@ const printData = (data) => {
 
     } else {
         result.classList.remove("result-data")
+        searchComponent.classList.remove("result-data")
         resultTitle.innerText = "0 Results"
         resultText.innerText = "Try starting a new search below"
     }

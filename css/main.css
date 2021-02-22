@@ -270,7 +270,14 @@ ul {
 	align-items: center;
 }
 
-.result .search-title {
+.result-container .search-component {
+	display: none;
+}
+.result-container .result-data.search-component {
+	display: block;
+}
+
+.result-container .search-title {
 	padding-top: 15px;
 	color: white;
 }
@@ -458,9 +465,13 @@ ul {
 		width: 28px;
 	}
 
-	.result .search-component {
+	.result-container .search-component {
 		padding-top: 100px;
 		padding-bottom: 100px;
+	}
+
+	.result-container .search-component {
+		display: block;
 	}
 
 	.search-component {
