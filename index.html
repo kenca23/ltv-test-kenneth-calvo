@@ -44,22 +44,19 @@
         <div class="container">
             <h1>Search Any Email Address</h1>
             <p class="title-p"><span class="highlight">Start Here</span> - Look up the owner's name, photos and online
-                profiles.</br>See what you find!</p>
-            <form action="results.html" method="GET" class="needs-validation" novalidate>
-                <div class="form-group">
-                    <input 
-                    class="form-control form-control-lg search-input" 
-                    name="search" 
-                    type="email"
-                    data-id="email"
-                    placeholder="EMAIL"
-                    required>
+                profiles. See what you find!</p>
+            <form class="search-form row needs-validation" novalidate>
+                <div class="form-group col-md-9">
+                    <input class="form-control form-control-lg search-input" name="search" type="email" data-id="email"
+                        placeholder="EMAIL" required>
                     <div class="invalid-feedback">
                         Please add a valid email address
                     </div>
                 </div>
-                
-                <button type="submit" class="btn btn-primary btn-block primary-button" onclick="getData()">GO!</button>
+                <div class="col-md-3 button-wrapper">
+                    <button type="submit" class="btn btn-block primary-button">GO!</button>
+                </div>
+            
             </form>
             <div class="main-disclaimer">
                 <img class="icon" src="./assets/SVGs/lock.svg" alt="lock icon">
@@ -149,12 +146,14 @@
 
     <footer>
         <div class="container footer">
-            <div class="footer-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </div>
-            <div class="footer-links">
-                <a href="#" class="footer-link">Terms | Privacy</a>
+            <div class="row">
+                <div class="footer-text col-md-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+                <div class="footer-links col-md-2">
+                    <a href="#" class="footer-link">Terms | Privacy</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -181,19 +180,18 @@
                     if (form.checkValidity() === false) {
                         event.preventDefault();
                         event.stopPropagation();
+                    } else {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        let email = document.querySelector("[data-id=email]").value;
+                        localStorage.setItem("email", email);
+                        window.location.replace("/results.html");
                     }
                     form.classList.add('was-validated');
                 }, false);
             });
         }, false);
     })();
-
-    function getData() {
-        //gettting the values
-        let email = document.querySelector("[data-id=email]").value;
-        //saving the values in local storage
-        localStorage.setItem("email", email);
-    }
 </script>
 
 </body>

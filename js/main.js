@@ -33,7 +33,7 @@ const printData = (data) => {
     result.classList.remove("d-none");
     if (data && Object.keys(data).length > 0) {
         result.classList.add("result-data")
-        resultTitle.innerText = "Result"
+        resultTitle.innerText = "1 Result"
         resultText.innerText = "Look at the result below to see the details of the person you’re searched for."
 
         dataName.innerHTML = data.first_name + " " + data.last_name; // We don't have age in the data, So I don't include the ,AGE like in asset.
@@ -41,8 +41,11 @@ const printData = (data) => {
         dataAddress.innerHTML = data.address;
         dataEmail.innerHTML = data.email;
         data.phone_numbers.forEach(number => {
+            let telArea = number.substr(0, 3);
+            let telPart1 = number.substr(3, 3);
+            let telPart2 = number.substr(6)
             const li = document.createElement("li")
-            li.innerHTML = number
+            li.innerHTML = "(" + telArea + ") " + telPart1 + "-" +telPart2
             dataPhones.appendChild(li)
         });
         data.relatives.forEach(relative => {

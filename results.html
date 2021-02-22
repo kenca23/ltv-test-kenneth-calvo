@@ -45,28 +45,38 @@
     </header>
 
     <main class="result-container">
-        <section data-id="spinner" class="spinner d-none">
+        <section data-id="spinner" class="container spinner d-flex">
             <img class="spinner-gif" src="./assets/loading_spinner.gif" alt="loading spinner">
             <p class="spinner-message">Please wait a moment...</p>
         </section>
         <section data-id="result" class="result d-none">
-            <div>
+            <div class="container">
                 <h1 data-id="result-title" class="result-title">0 Results</h1>
-                <p data-id="result-text" class="result-text">Try starting a new search below</p>
+                <p data-id="result-text" class="result-text justify-content">Try starting a new search below</p>
             </div>
-            <div data-id="result-info" class="result-info">
+            <div data-id="result-info" class="container result-info">
 
                 <div class="data-wrapper">
-                    <h2 data-id="data-name" class="name"></h2>
-                    <p data-id="data-description" class="description"></p>
-                    <h3 class="data-subtitle">Address</h3>
-                    <p data-id="data-address" class="address"></p>
-                    <h3 class="data-subtitle">Email</h3>
-                    <p data-id="data-email" class="email"></p>
-                    <h3 class="data-subtitle">Phone Numbers</h3>
-                    <ul data-id="data-phones" class="phone-ul"></ul>
-                    <h3 class="data-subtitle">Relatives</h3>
-                    <ul data-id="data-relatives" class="relatives-ul"></ul>
+                    <div class="profile circle"><img class="profile-icon" src="./assets/SVGs/icn_person.svg" alt="profile icon"></div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 data-id="data-name" class="name"></h2>
+                            <p data-id="data-description" class="description"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="data-subtitle">Address</h3>
+                            <p data-id="data-address" class="address"></p>
+                            <h3 class="data-subtitle">Email</h3>
+                            <p data-id="data-email" class="email"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="data-subtitle">Phone Numbers</h3>
+                            <ul data-id="data-phones" class="phone-ul"></ul>
+                            <h3 class="data-subtitle">Relatives</h3>
+                            <ul data-id="data-relatives" class="relatives-ul"></ul>
+                        </div>
+                    </div>
+                    
                 </div>
 
             </div>
@@ -74,16 +84,18 @@
                 <div class="container">
                     <h2 class="search-title">Can’t Find The Right Person?</h2>
                     <p class="title-p"><span class="highlight">Try Again</span> - Make a new search</p>
-                    <form data-id="form" class="needs-validation" novalidate>
-                        <div class="form-group">
+                    <form class="search-form row needs-validation" novalidate>
+                        <div class="form-group col-md-9">
                             <input class="form-control form-control-lg search-input" name="search" type="email" data-id="email"
                                 placeholder="EMAIL" required>
                             <div class="invalid-feedback">
                                 Please add a valid email address
                             </div>
                         </div>
-            
-                        <button type="submit" class="btn btn-primary btn-block primary-button">GO!</button>
+                        <div class="col-md-3 button-wrapper">
+                            <button type="submit" class="btn btn-block primary-button">GO!</button>
+                        </div>
+                    
                     </form>
                     <div class="main-disclaimer">
                         <img class="icon" src="./assets/SVGs/lock.svg" alt="lock icon">
@@ -97,14 +109,16 @@
 
     <footer>
         <div class="container footer">
-            <div class="footer-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-            </div>
-            <div class="footer-links">
-                <a href="#" class="footer-link">Terms | Privacy</a>
+            <div class="row">
+                <div class="footer-text col-md-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </div>
+                <div class="footer-links col-md-2">
+                    <a href="#" class="footer-link">Terms | Privacy</a>
+                </div>
             </div>
         </div>
     </footer>

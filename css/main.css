@@ -8,7 +8,7 @@
 	--primary: #004a80;
 	--secondary: #f2da56;
 	--dark-yellow: #f6bc25;
-
+	--yellow: #a6953b;
 	--gray: #999;
 	--gray2: #e6e6e6;
 	--gray3: #9b9b9b;
@@ -39,6 +39,7 @@ h2 {
 	margin: 0;
 }
 h3 {
+	font-weight: bold;
 	font-size: 20px;
 	color: var(--primary);
 	letter-spacing: 0;
@@ -49,6 +50,10 @@ p {
 	color: black;
 	letter-spacing: 0;
 	line-height: 24px;
+}
+
+ul {
+	list-style: none;
 }
 
 .logo-icon {
@@ -77,6 +82,7 @@ p {
 .search-component {
 	background-color: var(--primary);
 	padding: 18px 10px 30px 10px;
+	width: 100%;
 }
 .title-p {
 	font-size: 18px;
@@ -142,8 +148,12 @@ p {
 }
 
 .primary-button {
-	background-image: linear-gradient(225deg, #f2da56 0%, #f6bc25 100%);
-	box-shadow: 0 3px 0 0 #a6953b, inset 0 1px 0 0 #ffffff;
+	background-image: linear-gradient(
+		225deg,
+		var(--secondary) 0%,
+		var(--dark-yellow) 100%
+	);
+	box-shadow: 0 3px 0 0 var(--yellow), inset 0 1px 0 0 white;
 	border-radius: 6px;
 	font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
 	font-weight: bold;
@@ -153,6 +163,36 @@ p {
 	text-align: center;
 	border: 0;
 	background-color: transparent;
+	transition: none;
+}
+
+.primary-button:hover {
+	background-image: none;
+	background-color: var(--secondary);
+	box-shadow: 0 3px 0 0 var(--yellow), inset 0 1px 0 0 white;
+	border-radius: 6px;
+	color: var(--primary);
+	border-color: transparent;
+}
+.primary-button:active {
+	background-image: none;
+	background-color: var(--dark-yellow);
+	box-shadow: 0 3px 0 0 var(--yellow), inset 0 1px 0 0 white;
+	border-radius: 6px;
+	color: var(--primary);
+	border-color: transparent;
+}
+.btn-primary:not(:disabled):not(.disabled):active {
+	background-image: none;
+	background-color: var(--dark-yellow);
+	box-shadow: 0 3px 0 0 var(--yellow), inset 0 1px 0 0 white;
+	border-radius: 6px;
+	color: var(--primary);
+	border-color: transparent;
+}
+
+.primary-button:focus {
+	color: var(--primary);
 }
 
 .main-disclaimer {
@@ -230,15 +270,8 @@ p {
 	align-items: center;
 }
 
-.result-text {
-	font-size: 18px;
-	color: #4a4a4a;
-	letter-spacing: 0;
-	text-align: center;
-	line-height: 28px;
-}
-
 .result .search-title {
+	padding-top: 15px;
 	color: white;
 }
 
@@ -261,18 +294,81 @@ p {
 	text-align: center;
 	margin: 0;
 }
-.result-title {
-	color: var(--primary);
+.result-info {
+	width: 100%;
+	padding-bottom: 30px;
 }
 
-.result .result-info,
-.result .search-component {
+.result-title {
+	color: var(--primary);
+	padding-top: 90px;
+}
+
+.profile {
 	display: none;
 }
 
-.result.d-flex.result-data .result-info,
-.result.d-flex.result-data .search-component {
-	display: flex;
+.result-data .result-title {
+	padding-top: 30px;
+}
+
+.result-text {
+	font-size: 18px;
+	color: #4a4a4a;
+	letter-spacing: 0;
+	line-height: 28px;
+	text-align: center;
+	padding-bottom: 120px;
+	margin: 0;
+}
+
+.result-data .result-text {
+	padding-bottom: 15px;
+}
+
+.data-wrapper {
+	margin: 0;
+	padding: 25px 15px;
+	background: white;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 30px;
+}
+
+.name {
+	font-size: 32px;
+	text-align: left;
+}
+
+.description {
+	padding-top: 7px;
+}
+
+.phone-ul {
+	margin: 0;
+	padding-bottom: 18px;
+}
+.relatives-ul {
+	margin: 0;
+}
+
+.phone-ul li,
+.relatives-ul li {
+	color: black;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: 24px;
+}
+
+.phone-ul li {
+	color: var(--primary);
+}
+
+.result .result-info {
+	display: none;
+}
+
+.result.d-flex.result-data .result-info {
+	display: block;
 }
 
 .footer {
@@ -291,9 +387,207 @@ p {
 .footer-links {
 	padding-top: 20px;
 	padding-bottom: 14px;
-	margin: 0 auto;
+	text-align: center;
 }
 .footer-link {
 	color: var(--primary);
 	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: 0;
+}
+
+@media only screen and (min-width: 768px) {
+	h1,
+	h2 {
+		font-size: 48px;
+	}
+
+	.container {
+		/* The asset is looking for a bigger container that the bootstrap 720px media query */
+		max-width: 768px;
+		padding: 0 25px;
+	}
+
+	.circle {
+		width: 63px;
+		height: 63px;
+		padding-top: 12px;
+	}
+	.number {
+		font-size: 33px;
+	}
+
+	.explanation-text {
+		font-size: 20px;
+		padding: 20px 0 40px 0;
+	}
+
+	.spinner {
+		min-height: 447px;
+	}
+
+	.result-info {
+		padding-top: 15px;
+		padding-bottom: 40px;
+	}
+
+	.data-wrapper {
+		display: flex;
+		padding: 30px;
+	}
+
+	.result-title {
+		padding-top: 160px;
+	}
+
+	.result-text {
+		padding-bottom: 187px;
+		font-size: 20px;
+	}
+
+	.result-data .result-text {
+		padding-bottom: 30px;
+	}
+
+	.profile {
+		display: block;
+		margin-right: 10px;
+	}
+
+	.profile-icon {
+		width: 28px;
+	}
+
+	.result .search-component {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	.search-component {
+		padding: 20px 0;
+	}
+
+	.title-p {
+		font-size: 20px;
+		padding-top: 15px;
+		margin-bottom: 40px;
+	}
+
+	.button-wrapper {
+		padding-left: 5px;
+	}
+
+	.search-form .form-group {
+		margin: 0;
+	}
+
+	.search-form .primary-button {
+		height: 100%;
+	}
+
+	.search-input {
+		height: 70px;
+	}
+
+	.invalid-feedback {
+		position: absolute;
+		width: 50%;
+		font-size: 16px !important;
+	}
+
+	.main-disclaimer {
+		padding-top: 30px;
+	}
+
+	.footer {
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+
+	.footer-links {
+		text-align: end;
+		padding-left: 0;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	h1,
+	h2 {
+		font-size: 52px;
+	}
+
+	h3 {
+		font-size: 22px;
+	}
+
+	p {
+		font-size: 18px;
+	}
+
+	.container {
+		padding: 0;
+		max-width: 980px;
+	}
+
+	.circle {
+		width: 90px;
+		height: 90px;
+		padding-top: 25px;
+	}
+	.number {
+		font-size: 48px;
+	}
+
+	.explanation-text {
+		font-size: 22px;
+	}
+
+	.spinner {
+		min-height: 891px;
+	}
+
+	.result-info {
+		padding-bottom: 60px;
+	}
+
+	.profile {
+		margin-right: 20px;
+		padding-top: 22px;
+	}
+
+	.profile-icon {
+		width: 40px;
+	}
+
+	.result-text {
+		padding-bottom: 178px;
+		font-size: 24px;
+	}
+
+	.search-component {
+		padding: 50px 0 95px 0;
+	}
+
+	.title-p {
+		font-size: 24px;
+		padding-top: 15px;
+		margin-bottom: 30px;
+	}
+
+	.main-disclaimer {
+		padding-top: 40px;
+	}
+
+	.explanation-component {
+		padding: 40px 0;
+	}
+
+	.footer {
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+	.footer-links {
+		padding-top: 10px;
+		padding-bottom: 0;
+	}
 }
