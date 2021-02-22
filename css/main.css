@@ -84,6 +84,7 @@ p {
 	letter-spacing: 0;
 	text-align: center;
 	line-height: 22px;
+	padding-top: 10px;
 }
 
 .title-p .highlight {
@@ -222,6 +223,7 @@ p {
 }
 
 .result {
+	flex-direction: column;
 	min-height: 307px;
 	display: flex;
 	justify-content: center;
@@ -234,6 +236,10 @@ p {
 	letter-spacing: 0;
 	text-align: center;
 	line-height: 28px;
+}
+
+.result .search-title {
+	color: white;
 }
 
 .spinner {
@@ -258,6 +264,17 @@ p {
 .result-title {
 	color: var(--primary);
 }
+
+.result .result-info,
+.result .search-component {
+	display: none;
+}
+
+.result.d-flex.result-data .result-info,
+.result.d-flex.result-data .search-component {
+	display: flex;
+}
+
 .footer {
 	display: flex;
 	flex-direction: column;
